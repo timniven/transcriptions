@@ -8,15 +8,29 @@
 % - glissando: 
 
 % chord indicators
-chords = {
+% chord name chart: https://lilypond.org/doc/v2.24/Documentation/notation/chord-name-chart
+% I wonder whether there is a char you can use for the 
+chordss = \new ChordNames {
   \chordmode {
-    % ees minor
-    % pass
-    % ges Maj6 / des -> this sus chord feels wrong, lacking color, root-4-maj7-2 does work? 
-    c min7 flat 5
-    % aes min 7 (likely)
-    % that des one, still unclear
-    c min7 flat 5
+    ees4:min7
+    ees4:min7/d
+    des2:9
+    c2:min7.5-
+    aes4:min7
+    des4:9
+    c1:min7.5-
+    b4:min7
+    e4:9
+    bes4:min7
+    ees4:9
+    aes2:min7
+    des2:9
+    ges4:7
+    g4:7
+    aes2:7
+    c2:min7.5-
+    b2:7.9-
+    bes1:7
   }
 }
 
@@ -48,6 +62,7 @@ guitar = {
 
 \score {
   \new StaffGroup <<
+    \chords { \chordss }
     \new Staff \with {
       instrumentName = "Guitar"
     } {
