@@ -12,8 +12,7 @@
 % I wonder whether there is a char you can use for the 
 chordss = \new ChordNames {
   \chordmode {
-    ees4:min7
-    ees4:min7/d
+    ees2:min7    
     des2:9
     c2:min7.5-
     aes4:min7
@@ -47,12 +46,16 @@ bass = {
 }
 
 guitar = {
+  \tempo "" 4 = 50
   \key ees \minor
   \time 4/4
   r4 \grace {a,\6\glissando} \tuplet 3/2 { bes,8\6 ees8\5 f16 bes16 } ges8 \grace {des'\3\glissando} ees'4\3
   aes32\4( a32\4 aes32\4) ges32\4 ees16\5 ees4\5
   ees16\5 d16\5 ees16\5 \grace {a\4\glissando} bes8\4 aes16\4( ges16\4) aes8\4 
   \tuplet 3/2 {ges16\4( f16\4) ees16\5} f16\4( ges16\4) f8\4
+  bes,32\6 ees32\5 ges32\4 bes32\3 des'32\3 bes32\3 b32\3 c'4\3~ c'8\3
+  ges16\4 g16\4   aes16\4 \tuplet 3/2 {a8\4   d'8\3  e'32\2\glissando} ges'32\2 aes16\4
+  f16\4   ges16\4 g16\4   \tuplet 3/2 {aes8\4 des'8\3 ees'32\2\glissando} f'32\2 g8\4 
 }
 
 \header{
@@ -82,7 +85,7 @@ guitar = {
   \layout {
     \context {
       \Score
-      \override Glissando.minimum-length = 2
+      \override Glissando.minimum-length = 3
       \override Glissando.springs-and-rods =
                           #ly:spanner::set-spacing-rods
       \omit StringNumber
